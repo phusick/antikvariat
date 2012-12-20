@@ -10,7 +10,8 @@ require({
 	// The base path for all packages and modules. If you don't provide this, baseUrl defaults to the directory
 	// that contains dojo.js. Since all packages are in the root, we just leave it blank. (If you change this, you
 	// will also need to update `app.profile.js`).
-	baseUrl: '/src',
+	//baseUrl: dojoConfig && dojoConfig.isDebug === false ? '/dist' : 'src',
+	baseUrl: '../src',
 
 	// A list of packages to register. Strictly speaking, you do not need to register any packages,
 	// but you can't require "app" and get app/main.js if you do not register the "app" package (the loader will look
@@ -22,7 +23,9 @@ require({
 		// instead, and it will configure it using that string for both the "name" and "location" properties. Handy!
 		'dojo',
 		'dijit',
-		'dojox',
+		'dgrid',
+		'xstyle',
+		'put-selector',
 
 		// For reference, this is what a more verbose package declaration looks like.
 		{ name: 'app', location: 'app', map: {} }

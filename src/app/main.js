@@ -39,7 +39,7 @@ define([ 'dojo/has', 'require' ], function (has, require) {
 		 * require just `dojo/domReady`, it would load that module just like any other module, without the special
 		 * plugin functionality.
 		 */
-		require([ './EntryPoint', 'dojo/domReady!' ], function (EntryPoint) {
+		require([ 'app/EntryPoint', 'dojo/domReady!' ], function (EntryPoint) {
 			app.main = new EntryPoint().placeAt(document.body);
 
 			// It is important to remember to always call startup on widgets after you have added them to the DOM.
