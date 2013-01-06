@@ -12,6 +12,7 @@
 html, body {
 	width: 100%;
 	height: 100%;
+	overflow: hidden;
 }
 
 #grid {
@@ -21,4 +22,21 @@ html, body {
   left: 0;
   right: 0;
   height: auto;
+}
+
+.form-row {
+	padding: 4px;
+}
+
+.form-search-item {
+	width: 99%;
+}
+
+.form-filter-itemx {
+	width: 150px;
+}
+
+.default-option {
+	color:#333;
+	font-style:italic;
 }

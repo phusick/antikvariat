@@ -17,14 +17,21 @@ abstract class Resource {
 
 
       $result = $me->getItems($app, $range);
-      $rows = json_encode($result->getRows());
-      $count = $result->getCount();
-      $from = $range['from'];
-      $to = $range['to'];
 
       $app->response()->header('Content-Type', 'application/json');
-      $app->response()->header('Content-Range', $me->buildRange($from, $to, $count));
-      $app->response()->write($rows);
+
+      if ($result instanceof Result) {
+        $rows = json_encode($result->getRows());
+        $count = $result->getCount();
+        $from = $range['from'];
+        $to = $range['to'];
+
+        
+        $app->response()->header('Content-Range', $me->buildRange($from, $to, $count));
+        $app->response()->write($rows);        
+      } else {
+        $app->response()->write(json_encode($result));   
+      }
     };
   }
 

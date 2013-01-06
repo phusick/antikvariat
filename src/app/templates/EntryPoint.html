@@ -6,9 +6,76 @@
 	>
 
 		<div
-			data-dojo-type="dijit/layout/ContentPane"
-			data-dojo-props="region:'top'"
-		>filters here</div>
+			data-dojo-type="dijit/layout/BorderContainer"
+			data-dojo-props="region:'top', design:'sidebar', gutters: false"
+			style="height:75px;"
+		>
+
+			<!-- search  -->
+			<div
+				data-dojo-type="dijit/layout/ContentPane"
+				data-dojo-props="region:'center'"
+			>
+
+				<div class="form-row">
+					<div
+						id="authorFilter"
+						class="form-search-item"
+						data-dojo-type="dijit/form/ComboBox"
+						data-dojo-props="disabled:true, placeholder:'vyhledávání podle autora', hasDownArrow:false"
+					></div>
+				</div>
+
+				<div class="form-row">	
+					<div
+						id="titleFilter"
+						class="form-search-item"
+						data-dojo-type="dijit/form/ComboBox"
+						data-dojo-props="disabled:true, placeholder:'vyhledávání podle názvu', hasDownArrow:false"
+					></div>
+				</div>
+
+			</div>
+
+			<!-- filters -->
+			<div
+				data-dojo-type="dijit/layout/ContentPane"
+				data-dojo-props="region:'right'"
+				style="width: 220px;"
+			>
+
+				<div class="form-row">
+					<div
+						id="genreFilter"
+						style="width:190px;"
+						data-dojo-type="dijit/form/Select"
+						data-dojo-props="disabled:true"
+					>
+						<option value="DEFAULT">
+							<span class="default-option">všechny žánry</span>
+						</option>
+						<option></option>
+					</div>
+				</div>
+
+				<div class="form-row">
+					<div
+						id="languageFilter"
+						style="width:190px;"
+						data-dojo-type="dijit/form/Select"
+						data-dojo-props="disabled:true"
+					>
+						<option value="DEFAULT">
+							<span class="default-option">všechny jazyky</span>
+						</option>
+						<option></option>
+					</div>
+				</div>
+
+
+			</div>					
+
+		</div>
 
 		<div
 			data-dojo-type="dijit/layout/ContentPane"

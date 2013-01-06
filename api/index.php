@@ -23,7 +23,14 @@ $app->get('/', function () use ($app) {
 });
 
 $booksHandler = new \Model\Books();
+$languagesHandler = new \Model\Languages();
+$genresHandler = new \Model\Genres();
+$authorsHandler = new \Model\Authors();
 
 $app->get('/books', $booksHandler->getUrlHandler($app));
+$app->get('/languages', $languagesHandler->getUrlHandler($app));
+$app->get('/genres', $genresHandler->getUrlHandler($app));
+$app->get('/authors', $authorsHandler->getUrlHandler($app));
+
 
 $app->run();
