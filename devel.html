@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Dojo Boilerplate</title>
+    <title>Antikvariat</title>
     <!-- Application-specific CSS should be stored in your application’s package to ensure portability and to allow
          the build system to combine & minify it. -->
     <link rel="stylesheet" href="src/app/resources/app.css">
@@ -33,7 +33,9 @@
         var dojoConfig = {
             async: 1,
             tlmSiblingOfDojo: 0,
+            parseOnLoad: 0,
             isDebug: 1,
+            cacheBust: true
         };
     </script>
     <script src="src/dojo/dojo.js"></script>
