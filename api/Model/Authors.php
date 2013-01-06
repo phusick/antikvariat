@@ -6,8 +6,7 @@ class Authors extends Resource {
 
 	public function getItems($app, $range) {
 
-		// $search = $app->request()->params('search');
-		$search = trim(str_replace('*', '', $app->request()->params('search')));
+		$search = trim(str_replace('*', '', $app->request()->params('name')));
 		
 		if (empty($search)) {
 			return array();
@@ -18,6 +17,7 @@ class Authors extends Resource {
 		$query .= ' FROM';
 		$query .= '   [Autori]';
 		$query .= ' WHERE [autor] LIKE %like~';
+		$query .= ' ORDER by [autor]';
 
 		$result = \dibi::query($query, str_replace('*', '', $search));
 

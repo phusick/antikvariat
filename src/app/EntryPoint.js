@@ -98,8 +98,9 @@ var EntryPoint = declare([_WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin]
       		target: "/api/authors"
       	});
       	author.set("labelAttr", "name");
-      	author.set("searchAttr", "search");
-      	author.set("autocomplete", true);
+      	author.set("searchAttr", "name");
+      	author.set("autoComplete", true);
+      	author.set("maxHeight", -1);
       	author.set("disabled", false);
       	author.set("store", authorStore);
       },
